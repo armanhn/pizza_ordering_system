@@ -17,6 +17,35 @@ include "conn.php";
 </head>
 
 <body>
+    <section id='navbar'>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-secondary">
+            <a class="navbar-brand ps-5" href="admin_dashboard.php">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_item_update.php">Update Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_order.php">View Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_customer_update.php">Update Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="admin_view_charts.php">Charts</a>
+                    </li>
+                    <ul class="navbar-nav ml-auto ">
+                        <li class="nav-item position-absolute end-0 pe-5">
+                            <a href="logout.php"><button class=" btn" id='logout-btn'>LOGOUT</button></a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </nav>
+    </section>
     <div class="container">
         <table id='admin-table' class='table'>
             <tr>

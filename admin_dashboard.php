@@ -16,25 +16,30 @@
 
 <body id='admin-body'>
     <section id='navbar'>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-secondary">
+            <a class="navbar-brand ps-5" href="admin_dashboard.php">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_item_update.php">Update Item</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="view_order.php">View Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="admin_customer_update.php">Update Customer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link " href="admin_view_charts.php">Charts</a>
                     </li>
+                    <ul class="navbar-nav ml-auto ">
+                        <li class="nav-item nav-item position-absolute end-0 pe-5">
+                            <a href="logout.php"><button class=" btn" id='logout-btn'>LOGOUT</button></a>
+                        </li>
+                    </ul>
                 </ul>
             </div>
         </nav>
@@ -42,7 +47,7 @@
     <section>
         <div class='container' id='admin-card'>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Update Item</h5>
@@ -51,7 +56,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">View Orders</h5>
+
+                            <a href="view_order.php" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Update Customer</h5>
@@ -60,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">View Charts</h5>
@@ -71,18 +85,6 @@
             </div>
         </div>
     </section>
-    <section>
-        <div>
-            <div id='admin-two-charts'>
-                <div id='chart2'></div>
-                <div id='chart'></div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <script src='admin_dashboard.js'></script>
 </body>
 
 </html>

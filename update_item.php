@@ -17,25 +17,56 @@ include "conn.php";
 </head>
 
 <body>
-
+    <section id='navbar'>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-secondary">
+            <a class="navbar-brand ps-5" href="admin_dashboard.php">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_item_update.php">Update Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_order.php">View Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_customer_update.php">Update Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="admin_view_charts.php">Charts</a>
+                    </li>
+                    <ul class="navbar-nav ml-auto ">
+                        <li class="nav-item position-absolute end-0 pe-5">
+                            <a href="logout.php"><button class=" btn" id='logout-btn'>LOGOUT</button></a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </nav>
+    </section>
     <div class="container">
-        <p>
+        <p class=text-muted>
             You will not be able to update Item name rather provide item name to update that specific item.
         </p>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <form action="" method="POST" enctype="multipart/form-data">
 
-            <p> Item Name:
-                <input type="text" name='item_name' required>
-            </p>
-            <p> Item Price:
-                <input type="text" name='item_price'>
-            </p>
-            <p> Item Details:
-                <input type="text" name='item_details'>
-            </p>
-            <input type="file" name="image">
-            <input type="submit" name="submit" value="Update">
-        </form>
+                <p class=text-muted> Item Name:
+                    <input type="text" class="form-control " name='item_name'>
+                </p>
+                <p class=text-muted> Item Price:
+                    <input type="text" class="form-control " name='item_price'>
+                </p class=text-muted>
+                <p class=text-muted> Item Details:
+                    <input type="text" class="form-control " name='item_details'>
+                </p class=text-muted>
+                <input type="file" class="form-control-file " name="image" style="color: antiquewhite;">
+                <input type="submit" name="submit" class="btn btn-primary" value="Upload">
+            </form>
+        </div>
+
     </div>
     <?php
     $status = $statusMsg = '';

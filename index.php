@@ -41,20 +41,16 @@ if (isset($_POST['login'])) {
 <body id="body">
     <section>
         <div id="main" class="container">
-            <div id="first_part" class="container">
+
+            <div id="second_part" class="container" style="max-width:50%">
                 <h1>Pizzeria</h1>
-                <div class="container-fluid">
-                    <img src="images/cover_img.jpg" id="logo" class="img-fluid" alt="cover-logo">
-                </div>
-            </div>
-            <div id="second_part" class="container">
                 <form action="" method="post" class="myForm">
                     <input type="text" name="user_id" placeholder="Enter User ID">
                     <input type="password" name="password" placeholder="Enter Password">
                     <input name="login" id="login-btn" class="btn btn-block login-btn mb-4" type="submit" value="Login">
 
                 </form>
-                <p>
+                <p style="color:blanchedalmond">
                     Dont have an account?
                 </p>
                 <form action="sign_up.php">

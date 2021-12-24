@@ -47,23 +47,26 @@ if (isset($_POST['submit'])) {
 
 <body>
     <div class="container">
-        <form action="" class="myForm" method="POST">
-            <p>User name: </p>
-            <input type="text" name="user_id" placeholder="Enter User ID" id='user_id'>
-            <p>Full Name: </p>
-            <input type="text" name="user_name" placeholder="Enter Full Name">
-            <p>Email: </p>
-            <input type="text" name="user_email" placeholder="Enter Email">
-            <p>Password:</p>
-            <input type="password" name="password" id="" placeholder="Enter Password">
-            <p>Confirm Password:</p>
-            <input type="password" name="c_password" id="" placeholder="Confirm Password">
-            <p>Contact: </p>
-            <input type="text" name="user_contact" placeholder="Enter Phone Number">
-            <p>Address: </p>
-            <input type="text" name="user_address" placeholder="Enter Address">
-            <input type="submit" value="Sign up" name="submit">
-        </form>
+        <div class="form-group">
+            <form action="" class="myForm" method="POST">
+                <p>User name: </p>
+                <input type="text" class="form-control" name="user_id" placeholder="Enter User ID" id='user_id'>
+                <p>Full Name: </p>
+                <input type="text" class="form-control" name="user_name" placeholder="Enter Full Name">
+                <p>Email: </p>
+                <input type="text" class="form-control" name="user_email" placeholder="Enter Email">
+                <p>Password:</p>
+                <input type="password" class="form-control" name="password" id="" placeholder="Enter Password">
+                <p>Confirm Password:</p>
+                <input type="password" class="form-control" name="c_password" id="" placeholder="Confirm Password">
+                <p>Contact: </p>
+                <input type="text" class="form-control" name="user_contact" placeholder="Enter Phone Number">
+                <p>Address: </p>
+                <input type="text" class="form-control" name="user_address" placeholder="Enter Address">
+                <input type="submit" class="btn bg-seceondary" value="Sign up" name="submit">
+            </form>
+        </div>
+
     </div>
 </body>
 

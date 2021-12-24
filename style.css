@@ -1,5 +1,11 @@
 #body{
-    background-color: aquamarine;
+    background-image:linear-gradient(to right, rgba(255,0,0,0), rgba(223, 88, 88, 0.2));
+    background-color: black;
+}
+
+body {
+    background-image: linear-gradient(to right, rgba(255, 230, 230, 0.2), rgba(142, 117, 181, 0.2));
+    background-color: black;
 }
 #main{
     margin-top: 200px;
@@ -10,6 +16,12 @@
    
 
 }
+.table{
+    color:blanchedalmond
+}
+.table h1{
+    color:blanchedalmond
+}
 #first_part{
     height: 50vh;
     width: 100%;
@@ -19,20 +31,28 @@
     background: url(images/img2.png) repeat scroll center center/cover;
     
 }
-#logo{
-    object-fit: contain;
-    width: 75%;
-    margin-left: 40px;
-}
+
 #first_part h1{
     text-align: center;
+    color: rgb(238, 149, 149);
 }
-#second_part{
+#second_part {
     display:block;
-    background-color: white;
-    border-style: hidden;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-style: solid;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+#second_part h1{
+    text-align: center;
+    color: rgb(238, 149, 149);
+
+}
+
+#second_part input{
+    background: transparent;
+    border: none;
+    color: blanchedalmond;
 }
 
 #login-btn:hover{
@@ -46,23 +66,13 @@
     margin-top: 50px;
     margin-bottom: 50px;
 }
-#chart{
 
-}
-
-#admin-two-charts{
-    display: flex;
-    justify-content: space-evenly;
-}
 
 .admin-button{
     height: 200px;
     width:30%;
 }
 
-#admin-body{
-    background-color: bisque;
-}
 #admin-card{
     padding-top: 30px;
     padding-bottom: 30px;;
@@ -71,10 +81,39 @@
     background-color: bisque;
 }
 .card-body{
-    background-color: chocolate;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(206, 104, 104, 0.2));
+    background-color:black;
+    color: blanchedalmond;
 }
 
 #image{
     height: 50px;
     width:100%;
 }
+
+
+
+#myCarousel{
+    text-shadow: 1px 1px wheat;
+    color:#352e57;
+}
+
+#logout-btn{
+    border: none;
+    background: rgb(57 38 43);
+    color:white;
+    float:right;
+}
+
+::placeholder {
+    color: rgb(212, 160, 160);
+    opacity: 1; 
+  }
+
+
+  #customer-form{
+      display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 50%;
+  }

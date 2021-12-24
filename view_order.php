@@ -38,7 +38,7 @@ include "conn.php";
                         <a class="nav-link " href="admin_view_charts.php">Charts</a>
                     </li>
                     <ul class="navbar-nav ml-auto ">
-                        <li class="nav-item nav-item position-absolute end-0 pe-5">
+                        <li class="nav-item position-absolute end-0 pe-5">
                             <a href="logout.php"><button class=" btn" id='logout-btn'>LOGOUT</button></a>
                         </li>
                     </ul>
@@ -47,43 +47,51 @@ include "conn.php";
         </nav>
     </section>
     <div class="container">
-        <div class='container' id='admin-card'>
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Create Customer</h5>
-                            <a href="create_customer.php" class="btn btn-primary">Click</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">View Customer</h5>
+        <table id='admin-table' class='table'>
 
-                            <a href="view_customer.php" class="btn btn-primary">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Update Customer Information</h5>
-                            <a href="update_customer.php" class="btn btn-primary">Click</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Remove Customer</h5>
-                            <a href="delete_customer.php" class="btn btn-primary">Click</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <?php
+            $sql = "SELECT * FROM order_tbl WHERE order_status='pending'";
+            $result = mysqli_query($conn, $sql);
+            $data = mysqli_fetch_all($result);
+            if (mysqli_num_rows($result) > 0) {
+                echo            '<tr>
+                <th>Order ID</th>
+                <th>Order Details</th>
+                <th>Order Total Price</th>
+                <th>Order Status</th>
+                <th>Customer ID</th>
+            </tr>';
+
+                for ($i = 0; $i < sizeof($data); $i++) {
+                    echo '<tr>';
+                    echo '<td>' . $data[$i][0] . '</td>';
+                    echo '<td>' . $data[$i][1] . '</td>';
+                    echo '<td>' . $data[$i][2] . '</td>';
+                    echo '<td>' . $data[$i][3] . '</td>';
+                    echo '<td>' . $data[$i][4] . '</td>';
+                    echo '<td><a href="view_order.php?order_id=' . $data[$i][0] . '">Update Status</a></td>';
+                    echo '</tr>';
+                }
+            } else {
+                echo '<h1 style"color:antiquewhite">No Order at queue</h1>';
+            }
+            ?>
+        </table>
+        <?php
+        if (!empty($_GET['order_id'])) {
+            $order_id = $_GET['order_id'];
+            $sql = "UPDATE order_tbl
+            SET order_status = 'recieved' WHERE order_id = '$order_id'";
+            if (mysqli_query($conn, $sql)) {
+                echo "Updated data";
+                // header('Location:view_order.php');
+            } else {
+                echo "something went wrong";
+            }
+        } else
+            $order_id = "";
+
+        ?>
     </div>
 </body>
 

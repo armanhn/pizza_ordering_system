@@ -17,26 +17,57 @@ include "conn.php";
 </head>
 
 <body>
-
+    <section id='navbar'>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-secondary">
+            <a class="navbar-brand ps-5" href="admin_dashboard.php">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_item_update.php">Update Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_order.php">View Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_customer_update.php">Update Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="admin_view_charts.php">Charts</a>
+                    </li>
+                    <ul class="navbar-nav ml-auto ">
+                        <li class="nav-item position-absolute end-0 pe-5">
+                            <a href="logout.php"><button class=" btn" id='logout-btn'>LOGOUT</button></a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </nav>
+    </section>
     <div class="container">
-        <p>
+        <p class=text-muted>
             You will not be able to update Item name rather provide item name to update that specific item.
         </p>
-        <form action="" class="myForm" method="POST">
-            <p><label for="user_id">User name:</label> <input type="text" name="user_id" placeholder="Enter User ID" id='user_id' required></p>
+        <div class="form-group">
+            <form action="" class="myForm" method="POST">
+                <p class=text-muted><label for="user_id">User name:</label> <input type="text" class="form-control" name="user_id" placeholder="Enter User ID" id='user_id' required></p>
 
-            <p><label for="">Full Name:</label><input type="text" name="user_name" placeholder="Enter Full Name"></p>
+                <p class=text-muted><label for="">Full Name:</label><input type="text" class="form-control" name="user_name" placeholder="Enter Full Name"></p>
 
-            <p><label for="">Email:</label> <input type="text" name="user_email" placeholder="Enter Email"></p>
+                <p class=text-muted><label for="">Email:</label> <input type="text" name="user_email" class="form-control" placeholder="Enter Email"></p>
 
-            <p><label for="">Password:</label><input type="password" name="password" id="" placeholder="Enter Password"></p>
+                <p class=text-muted><label for="">Password:</label><input type="password" name="password" id="" class="form-control" placeholder="Enter Password"></p>
 
-            <p><label for="">Contact:</label> <input type="text" name="user_contact" placeholder="Enter Phone Number"> </p>
+                <p class=text-muted><label for="">Contact:</label> <input class="form-control type=" text" name="user_contact" placeholder="Enter Phone Number"> </p>
 
-            <p><label for="">Address:</label><input type="text" name="user_address" placeholder="Enter Address"></p>
+                <p class=text-muted><label for="">Address:</label><input class="form-control type=" text" name="user_address" placeholder="Enter Address"></p>
 
-            <input type="submit" value="Update" name="submit">
-        </form>
+                <input type="submit" value="Update" name="submit">
+            </form>
+
+        </div>
     </div>
     <?php
     $status = $statusMsg = '';

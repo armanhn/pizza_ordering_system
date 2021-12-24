@@ -17,17 +17,46 @@ include "conn.php";
 </head>
 
 <body>
+    <section id='navbar'>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-secondary">
+            <a class="navbar-brand ps-5" href="admin_dashboard.php">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_item_update.php">Update Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_order.php">View Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_customer_update.php">Update Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="admin_view_charts.php">Charts</a>
+                    </li>
+                    <ul class="navbar-nav ml-auto ">
+                        <li class="nav-item position-absolute end-0 pe-5">
+                            <a href="logout.php"><button class=" btn" id='logout-btn'>LOGOUT</button></a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </nav>
+    </section>
 
     <div class="container">
-        <p>
-            State the item name you want to delete from the record.
-        </p>
-        <form action="" method="POST">
-            <p> Item Name:
-                <input type="text" name='item_name' required>
-            </p>
-            <input type="submit" name="submit" value="Delete">
-        </form>
+        <div class="form-group">
+            <form action="" method="POST" enctype="multipart/form-data">
+
+                <p class=text-muted> Item Name:
+                    <input type="text" class="form-control " name='item_name'>
+                </p>
+                <input type="submit" name="submit" class="btn btn-primary" value="Delete">
+            </form>
+        </div>
     </div>
     <?php
     $status = $statusMsg = '';
